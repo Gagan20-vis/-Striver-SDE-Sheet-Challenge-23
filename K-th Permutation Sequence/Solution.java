@@ -1,0 +1,3 @@
+import java.util.*;
+
+public class Solution {    public static String kthPermutation(int n, int k) {        List<Integer> number = new ArrayList<Integer>();        int fact = 1;        for(int i = 1; i<n; i++){            fact = fact * i;            number.add(i);        }        number.add(n);        String ans = "";        k = k - 1;        while(true){            ans = ans + number.get(k/fact);            number.remove(k/fact);            if(number.size() == 0){                break;            }            k = k % fact;            fact = fact / number.size();        }        return ans;    } }
