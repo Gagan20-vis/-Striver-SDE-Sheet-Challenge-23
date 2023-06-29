@@ -15,9 +15,8 @@ public class Solution {
             }
             if (map.containsKey(xr)) {
                 map.put(xr, map.get(xr) + 1);
-            } else {
+            } else
                 map.put(xr, 1);
-            }
         }
         return cnt;
     }
